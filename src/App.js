@@ -1,24 +1,27 @@
-import React, {useEffect, useState} from "react";
-import Hero from "./components/Hero";
-import About from "./components/About";
+import React from "react";
 import Navbar from "./components/Navbar";
-import Projects from "./components/Projects";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import AboutRoute from "./components/routes/AboutRoute";
+import ProjectsRoute from "./components/routes/ProjectsRoute";
+import HomeRoute from "./components/routes/HomeRoute";
 
 function App() {
-    const [scroll, setScroll] = useState(0);
-
-    useEffect(() => {
-        window.onscroll = () => {
-            setScroll(window.scrollY);
-        };
-    }, [scroll]);
-
     return (
         <>
-            <Navbar />
-            <Hero scroll={scroll} />
-            <About scroll={scroll} />
-            <Projects scroll={scroll} />
+            <Router>
+                <Navbar />
+                <Switch>
+                    <Route path='/about'>
+                        <AboutRoute />
+                    </Route>
+                    <Route path='/projects'>
+                        <ProjectsRoute />
+                    </Route>
+                    <Route path='/'>
+                        <HomeRoute />
+                    </Route>
+                </Switch>
+            </Router>
         </>
     );
 }

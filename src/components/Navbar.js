@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import Fade from "react-reveal/Fade";
+import {Link} from "react-router-dom";
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
@@ -8,32 +10,39 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="navbar">
+        <nav className='navbar'>
             <div className={show ? "navbar-inner container active" : "navbar-inner container"}>
-                <a href="/" className="navbar-brand">
-                    Simon Villaverde
-                </a>
-                sp
-                <button className="navbar-toggler" onClick={toggleNav}>
+                <Link to='/' className='navbar-brand'>
+                    <Fade left cascade>
+                        Simon Villaverde
+                    </Fade>
+                </Link>
+                <button className='navbar-toggler' onClick={toggleNav}>
                     <div className={show ? "line line1" : "line"}></div>
                     <div className={show ? "line line2" : "line"}></div>
                     <div className={show ? "line line3" : "line"}></div>
                 </button>
-                <ul className="nav-items">
+                <ul className='nav-items'>
                     <li>
-                        <a href="#home" className="nav-link">
-                            Home
-                        </a>
+                        <Link to='/' className='nav-link'>
+                            <Fade right cascade>
+                                Home
+                            </Fade>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#about" className="nav-link">
-                            About
-                        </a>
+                        <Link to='/about' className='nav-link'>
+                            <Fade right cascade>
+                                About
+                            </Fade>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#projects" className="nav-link">
-                            Projects
-                        </a>
+                        <Link to='/projects' className='nav-link'>
+                            <Fade right cascade>
+                                Projects
+                            </Fade>
+                        </Link>
                     </li>
                 </ul>
             </div>
