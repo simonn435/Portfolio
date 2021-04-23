@@ -290,7 +290,7 @@ body {
 }
 
 .custom-shape-divider-bottom-1618781758 .shape-fill {
-    fill: #222;
+    fill: #151515;
 }
 
 /* ##### */
@@ -298,7 +298,7 @@ body {
 /* ##### */
 
 .about {
-    background-image: linear-gradient(to bottom, #222, #000);
+    background-image: linear-gradient(to bottom, #151515, #000);
 }
 
 .about-inner {
@@ -449,6 +449,12 @@ body {
     justify-content: space-between;
     align-items: center;
     overflow-x: auto;
+    cursor: grab;
+    user-select: none;
+}
+
+.projects-images.active {
+    cursor: grabbing;
 }
 
 .projects-images::-webkit-scrollbar {

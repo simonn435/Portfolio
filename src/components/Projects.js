@@ -1,49 +1,48 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useRef} from "react";
 import auctions from "../images/auctions.PNG";
 import barenpost from "../images/barenpost.PNG";
 import mogulmatter from "../images/mogullmatter.PNG";
 import myqualitia from "../images/myqualitia.PNG";
-import {FaGithub, FaInstagram} from "react-icons/fa";
+import {FaGithub} from "react-icons/fa";
 
-const Projects = ({scroll}) => {
-    const project = useRef(null);
-    const [isMoving, setIsMoving] = useState(false);
+const Projects = () => {
+    const slider = useRef(null);
 
-    const handleMouseEnter = () => {
-        setIsMoving(true);
-        console.log(isMoving);
+    let isDown = false;
+    let startX, scrollLeft;
+
+    const mouseDown = e => {
+        isDown = true;
+        slider.current.classList.add("active");
+        startX = e.pageX - slider.current.offsetLeft;
+        scrollLeft = slider.current.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsMoving(false);
-        console.log(isMoving);
+    const mouseLeave = () => {
+        slider.current.classList.remove("active");
+        isDown = false;
     };
 
-    const handleMouseMove = e => {
-        if (isMoving) {
-            var relX = e.pageX - e.offsetLeft;
-            var relY = e.pageY - e.offsetTop;
-            console.log(e);
-        }
+    const mouseUp = () => {
+        slider.current.classList.remove("active");
+        isDown = false;
     };
 
-    useEffect(() => {
-        project.current.addEventListener("mousedown", handleMouseEnter);
-        project.current.addEventListener("mouseup", handleMouseLeave);
-        // project.current.addEventListener("mousemove", handleMouseMove);
-        return () => {
-            project.current.removeEventListener("mousedown", handleMouseEnter);
-            project.current.removeEventListener("mouseup", handleMouseLeave);
-            // project.current.removeEventListener("mousemove", handleMouseMove);
-        };
-    }, []);
+    const mouseMove = e => {
+        if (!isDown) return;
+        e.preventDefault();
+        console.log("4");
+        const x = e.pageX - slider.current.offsetLeft;
+        const scroll = x - startX;
+        slider.current.scrollLeft = scrollLeft - scroll;
+    };
 
     return (
         <section className='projects'>
             <div className='projects-inner container'>
                 <h3 className='subtitle'>projects</h3>
 
-                <div className='projects-images' ref={project}>
+                <div className='projects-images' ref={slider} onMouseDown={mouseDown} onMouseLeave={mouseLeave} onMouseUp={mouseUp} onMouseMove={mouseMove}>
                     <div className='project-img'>
                         <img src={auctions} alt='' />
                         <div className='project-link'>
