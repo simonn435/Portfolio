@@ -1,15 +1,15 @@
 import React from "react";
-import ProjectsSlider from "./ProjectsSlider";
+import ProjectsCards from "./ProjectsCards";
 
 const Projects = () => {
-    return (
-        <section className='projects'>
-            <div className='projects-inner container'>
-                <h3 className='subtitle'>projects</h3>
-                <ProjectsSlider />
-            </div>
-        </section>
-    );
+  return (
+    <section className='projects'>
+      <div className='projects-inner container' id='projects'>
+        <h3 className='subtitle'>Self-Projects</h3>
+        <ProjectsCards />
+      </div>
+    </section>
+  );
 };
 
 export default Projects;

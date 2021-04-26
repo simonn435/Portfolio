@@ -1,53 +1,48 @@
 import React, {useState} from "react";
-import Fade from "react-reveal/Fade";
-import {Link} from "react-router-dom";
 
 const Navbar = () => {
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-    const toggleNav = () => {
-        setShow(!show);
-    };
+  const toggleNav = () => {
+    setShow(!show);
+  };
 
-    return (
-        <nav className='navbar'>
-            <div className={show ? "navbar-inner container active" : "navbar-inner container"}>
-                <Link to='/' className='navbar-brand'>
-                    <Fade left cascade>
-                        Simon Villaverde
-                    </Fade>
-                </Link>
-                <button className='navbar-toggler' onClick={toggleNav}>
-                    <div className={show ? "line line1" : "line"}></div>
-                    <div className={show ? "line line2" : "line"}></div>
-                    <div className={show ? "line line3" : "line"}></div>
-                </button>
-                <ul className='nav-items'>
-                    <li>
-                        <Link to='/' className='nav-link'>
-                            <Fade right cascade>
-                                Home
-                            </Fade>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/about' className='nav-link'>
-                            <Fade right cascade>
-                                About
-                            </Fade>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/projects' className='nav-link'>
-                            <Fade right cascade>
-                                Projects
-                            </Fade>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    );
+  return (
+    <nav className='navbar'>
+      <div className={show ? "navbar-inner container active" : "navbar-inner container"}>
+        <a href='#home' className='navbar-brand'>
+          Simon Villaverde
+        </a>
+        <button className='navbar-toggler' onClick={toggleNav}>
+          <div className={show ? "line line1" : "line"}></div>
+          <div className={show ? "line line2" : "line"}></div>
+          <div className={show ? "line line3" : "line"}></div>
+        </button>
+        <ul className='nav-items'>
+          <li>
+            <a href='#home' className='nav-link'>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href='#about' className='nav-link'>
+              About
+            </a>
+          </li>
+          <li>
+            <a href='#work' className='nav-link'>
+              Work
+            </a>
+          </li>
+          <li>
+            <a href='#projects' className='nav-link'>
+              Projects
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
