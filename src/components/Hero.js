@@ -14,13 +14,30 @@ const Hero = () => {
         </svg>
 
         <svg className='svg svg-triangle' width='60' height='60'>
-          <rect x='10' y='10' rx='5' ry='5' width='30' height='30' stroke='#3590F3' strokeWidth='7' />
+          <rect
+            x='10'
+            y='10'
+            rx='5'
+            ry='5'
+            width='30'
+            height='30'
+            stroke='#3590F3'
+            strokeWidth='7'
+          />
         </svg>
       </div>
 
       <div className='custom-shape-divider-bottom-1618781758'>
-        <svg data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'>
-          <path d='M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z' className='shape-fill'></path>
+        <svg
+          data-name='Layer 1'
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 1200 120'
+          preserveAspectRatio='none'
+        >
+          <path
+            d='M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z'
+            className='shape-fill'
+          ></path>
         </svg>
       </div>
     </section>

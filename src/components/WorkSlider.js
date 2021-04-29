@@ -45,7 +45,7 @@ const WorkSlider = () => {
   }, []);
 
   return (
-    <div className='work-images to-reveal right' id='slider'>
+    <div className='work-images to-reveal opacity' id='slider'>
       <ProjectSlide />
     </div>
   );
