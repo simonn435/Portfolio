@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #000;
+  background-color: #fff;
 }
 
 .container {
@@ -26,6 +26,7 @@ body {
   font-size: 3.4rem;
   font-weight: 100;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .subtitle {
@@ -128,10 +129,10 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000;
+  background-color: #fff;
   z-index: 1500;
   height: 10vh;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-inner {
@@ -153,7 +154,7 @@ body {
   height: 1px;
   margin: 5px 0;
   width: 30px;
-  background-color: #fff;
+  background-color: #333;
   transition: all 0.3s;
 }
 
@@ -179,7 +180,7 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #fff;
+  color: #333;
 }
 
 .nav-items {
@@ -193,8 +194,8 @@ body {
   position: absolute;
   top: 12vh;
   right: 0;
-  background-color: #111;
-  list-style-type: none;
+  background-color: #fafafa;
+  list-style: none;
   text-align: center;
   border-radius: 5px;
   min-width: 150px;
@@ -212,7 +213,7 @@ body {
 }
 
 .nav-items li:not(:last-child) {
-  border-bottom: 1px solid #151515;
+  border-bottom: 1px solid #ccc;
 }
 
 .nav-items li a::after {
@@ -271,6 +272,7 @@ body {
   .nav-items {
     position: relative;
     top: 0;
+    list-style-type: none;
     left: 0;
     display: flex;
     justify-content: center;
@@ -323,11 +325,27 @@ body {
   align-items: center;
 }
 
+.hero-divider {
+  margin: 30px auto 20px;
+  background-image: linear-gradient(40deg, #ff0035, #3590f3);
+  width: 60%;
+
+  height: 2px;
+}
+
 .hero h1 {
-  white-space: nowrap;
-  color: #fff;
+  color: #333;
   z-index: 1;
-  animation: appearBottom 1.5s ease, opacityAnimation 3s ease;
+  animation: appearBottom 1.5s ease forwards, opacityAnimation 3s ease forwards;
+}
+
+.hero-subtitle {
+  text-align: center;
+  color: #333;
+  text-transform: capitalize;
+  z-index: 1;
+  opacity: 0;
+  animation: appearBottom 1.5s ease forwards, opacityAnimation 3s 1s ease forwards;
 }
 
 .svg {
@@ -362,167 +380,43 @@ body {
 }
 
 .custom-shape-divider-bottom-1618781758 .shape-fill {
-  fill: #151515;
+  fill: #fafafa;
 }
 
-/* ##### */
-/* ABOUT */
-/* ##### */
+/* -----------PORFTOLIO----------- */
 
-.about {
-  background-image: linear-gradient(to bottom, #151515, #000);
+.portfolio {
+  background-image: linear-gradient(to bottom, #fafafa, #fff);
 }
-
-.about-inner {
-  color: #fff;
-  text-align: right;
-  padding: 80px 0 0 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.about-inner.active {
-  transform: translateY(0%);
-  transition: all 1s ease;
-  opacity: 1;
-}
-
-.about-inner.disabled {
-  transition: all 1s ease-out;
-  opacity: 0;
-  transform: translateY(100%);
-}
-
-.about-inner h3 {
-  text-align: right;
-}
-
-.about-img-container {
-  display: none;
-  flex: 1;
-  text-align: left;
-  transition: all 1s ease;
-}
-
-.about-img-container.active {
-  opacity: 1;
-}
-
-.about-img-container.disabled {
-  opacity: 0;
-}
-
-.about-img {
-  width: 100%;
-  height: auto;
-  max-width: 400px;
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-text p {
-  margin-left: auto;
-}
-
-.about-text a {
-  font-size: 2rem;
-  color: #fff;
-  background-color: #ff0035;
-  transition: all 0.7s ease;
-}
-
-.about-text a:hover {
-  background-color: rgb(0, 0, 0);
-}
-
-.about-text--links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.about-text--links a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  padding: 5px;
-  border-radius: 50%;
-  margin-left: 10px;
-}
-
-.about-text--gmail {
-  padding: 20px 0;
-}
-
-.about-text--gmail h4 {
-  font-size: 1.2rem;
-  padding-bottom: 10px;
-}
-
-.about-text--gmail span {
-  color: #777;
-}
-
-.about-text--gmail span {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.about-text--gmail svg {
-  font-size: 1.2rem;
-  color: #ff0035;
-}
-
-@media screen and (min-width: 768px) {
-  .about-img-container {
-    display: block;
-    width: 80%;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .about-img-container {
-    width: 100%;
-  }
-}
-
-/* ######## */
-/* PROJECTS */
-/* ######## */
-.work-inner {
+.portfolio-inner {
   overflow-x: hidden;
   padding: 80px 0 0 0;
 }
 
-.work-images {
+.portfolio-images {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow-x: auto;
-  cursor: grab;
-  user-select: none;
+  min-width: 90%;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 
-.work-images.active {
+.portfolio-images.active {
   cursor: grabbing;
 }
 
-.work-images::-webkit-scrollbar {
+.portfolio-images::-webkit-scrollbar {
   display: none;
 }
 
-.work-img {
-  min-width: 90%;
+.portfolio-img {
+  width: 90%;
   position: relative;
-  margin: 10px 10px 10px 0;
+  margin: 10px auto;
 }
 
-.work-link {
+.portfolio-link {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -537,24 +431,29 @@ body {
   align-items: center;
 }
 
-.work-link a {
+.portfolio-link a {
   color: #ffffff;
   font-size: 3rem;
 }
 
-.work-link a svg {
+.portfolio-link a svg {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.work-img:hover .work-link {
+.portfolio-img:hover .portfolio-link {
   opacity: 1;
 }
 
-.work-img img {
+.portfolio-img img {
   width: 100%;
   height: auto;
   display: block;
+}
+@media (min-width: 768px) {
+  .portfolio-img {
+    width: 48%;
+  }
 }
 
 /* ---------PROJECTS--------- */
@@ -573,7 +472,7 @@ body {
 
 .projects-cards .projects-card {
   background: #202020;
-  width: 49%;
+  width: 90%;
   height: 320px;
   margin: 6px;
   position: relative;
@@ -604,6 +503,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .projects-card:hover .project-link {
   opacity: 1;
 }
@@ -614,6 +514,123 @@ body {
   display: block;
   object-fit: cover;
 }
+
+@media (min-width: 768px) {
+  .projects-cards .projects-card {
+    background: #202020;
+    width: 48%;
+  }
+}
+
+/* ---------SKILLSET---------*/
+.skillset-inner {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.skillset-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skillset-icon {
+  margin: 20px;
+}
+.skillset-icon svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+}
+
+/* ---------CONTACT--------- */
+
+.contact {
+  background-image: none;
+}
+
+.contact-inner {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.contact-inner form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.contact-inner form button {
+  padding: 10px 60px;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+  outline: none;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  background-color: #3590f3;
+  cursor: pointer;
+}
+
+.contact-inner form button:hover {
+  background-color: #6eacee;
+}
+
+.contact-inner form button:active {
+  background-color: #356496;
+  transform: scale(0.95);
+}
+
+.contact-inner form label {
+  margin: 10px 0;
+}
+
+.contact-inner form input,
+.contact-inner form textarea {
+  padding: 10px;
+  width: 100%;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-inner form input:hover,
+.contact-inner form textarea:hover {
+  box-shadow: 0 0 5px 2px #d3d3d3;
+  background-color: #fff;
+}
+.contact-inner form input:focus,
+.contact-inner form textarea:focus {
+  box-shadow: 0 0 5px 2px #d3d3d3;
+  background-color: #fff;
+}
+.contact-inner form textarea {
+  resize: none;
+  min-height: 200px;
+}
+
+@media (min-width: 768px) {
+  .contact {
+    background-image: url("./images/bg.png");
+    background-position: center;
+    background-size: cover;
+  }
+  .contact-inner form input {
+    padding: 10px;
+    width: 50%;
+  }
+  .contact-inner form textarea {
+    width: 50%;
+  }
+}
+
 /* ---------FOOTER---------- */
 
 footer {
@@ -621,7 +638,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #333;
   flex-direction: column;
 }
 

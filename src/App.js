@@ -1,10 +1,11 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Work from "./components/Work";
+import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects";
+import Skillset from "./components/Skillset";
+import Contact from "./components/Contact";
 
 function App() {
   const scrollAn = () => {
@@ -13,7 +14,7 @@ function App() {
     const height = window.innerHeight;
 
     // Reveal each subtitle on scroll
-    subtitle.forEach(sub => {
+    subtitle.forEach((sub) => {
       const subPosition = sub.getBoundingClientRect().top;
       if (subPosition < height) {
         sub.classList.add("reveal");
@@ -24,7 +25,7 @@ function App() {
 
     // Reveal each section on scrol
 
-    section.forEach(sec => {
+    section.forEach((sec) => {
       const secPosition = sec.getBoundingClientRect().top;
       if (secPosition < height) {
         sec.classList.add("revealed");
@@ -45,9 +46,10 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <About />
-      <Work />
+      <Portfolio />
       <Projects />
+      <Skillset />
+      <Contact />
       <Footer />
     </>
   );
