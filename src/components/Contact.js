@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import contactBlack from "../images/black.png";
-import undrawSvg from "../images/undraw.svg";
+
 const Contact = () => {
   const [state, handleSubmit] = useForm("mqkwevjg");
   if (state.succeeded) {

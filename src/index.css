@@ -465,13 +465,17 @@ body {
 
 .portfolio-img img {
   width: 100%;
-  height: auto;
+  min-height: 200px;
+  object-fit: cover;
   display: block;
 }
 
 @media (min-width: 768px) {
   .portfolio-img {
     width: 48%;
+  }
+  .portfolio-img img {
+    height: auto;
   }
 }
 

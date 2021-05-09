@@ -1,5 +1,5 @@
 import React from "react";
-import { SiHtml5, SiCss3, SiJavascript, SiSass, SiBootstrap, SiReact, SiGithub, SiGitlab, SiFigma, SiFilezilla, SiNpm } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiSass, SiBootstrap, SiReact, SiGithub, SiGitlab, SiNpm } from "react-icons/si";
 
 const Skillset = () => {
   return (
